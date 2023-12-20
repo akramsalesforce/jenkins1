@@ -1,5 +1,8 @@
 pipeline {
     agent any
+    options{
+      ansiColor('xterm')
+    }
     environment {
         ENV_URL = "pipeline.google.com"
         SSH_CRED = credentials('SSH')
@@ -8,7 +11,7 @@ pipeline {
    stages {
           stage('One') {
               steps {
-                  ansiColor('xterm') {
+
                       // some block
                       sh '''
                           echo -e "\e[32mhello world\e[0m"
@@ -30,7 +33,7 @@ pipeline {
                     echo ENV_URL: ${ENV_URL}
                     env
                 '''
-            }
-        }
-    }
-}
+             }
+          }
+   }
+

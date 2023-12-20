@@ -6,7 +6,7 @@ pipeline{
       steps {
       ansiColor('xterm') {
           // some block
-        sh '''echo -e e[32mhello world[0m
+        sh '''echo -e "e[32m hello world[0m"
               echo hello Akram
               echo hello saria'''
       }

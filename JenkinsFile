@@ -7,7 +7,7 @@ pipeline {
     pollSCM('*/2 * * * *')
   }
    tools {
-     Maven 'maven-3.6.9'
+     maven 'maven'
    }
   environment {
         ENV_URL = "pipeline.google.com"

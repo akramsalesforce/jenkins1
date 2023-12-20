@@ -33,7 +33,7 @@ pipeline {
           echo ENV_URL: ${ENV_URL}
           env
           '''
-       }
      }
    }
+ }
 

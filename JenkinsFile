@@ -17,6 +17,9 @@ pipeline{
      }
      }
      stage('Two'){
+     environment {
+         ENV_URL = "stage.google.com"
+       }
            steps {
             sh ''' echo "stage Two"
              echo ENV_URL: ${ENV_URL}'''

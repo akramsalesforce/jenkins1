@@ -1,13 +1,12 @@
 pipeline{
   agent any
-  Environment {
-    ENV_URL="pipeline.google.com"
-
+  environment {
+    ENV_URL = "pipeline.google.com"
   }
   stages{
     stage('One'){
       steps {
-      AnsiColor('xterm') {
+      ansiColor('xterm') {
           // some block
         sh '''echo -e "e[32m hello world[0m"
               echo hello Akram

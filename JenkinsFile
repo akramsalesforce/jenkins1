@@ -4,7 +4,9 @@ pipeline{
   stages{
     stage('One'){
       steps {
-        echo "stage one"
+        sh '''hello world
+        hello Akram
+        hello saria '''
       }
      }
      stage('Two'){

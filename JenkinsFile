@@ -1,35 +1,36 @@
-pipeline{
-  agent any
+pipeline {
+    agent any
+    environment {
+        ENV_URL = "pipeline.google.com"
+        SSH_CRED = credentials('SSH')
+    }
 
-
-  environment {
-    ENV_URL = "pipeline.google.com"
-    SSH_CRED = credentials("SSH")
-  }
-  stages{
-    stage('One'){
-      steps {
-      ansiColor('xterm') {
-          // some block
-        sh '''echo -e "e[32m hello world[0m"
-              echo hello Akram
-              echo hello saria
-              echo ENV_URL: ${ENV_URL}'''
-
-      }
-     }
-     }
-     stage('Two'){
-       environment {
-         ENV_URL = "stage.google.com"
-       }
-           steps {
-            sh '''
-                echo "stage Two"
-                echo ENV_URL: ${ENV_URL}
-                echo "env"
-            '''
-           }
+   stages {
+          stage('One') {
+              steps {
+                  ansiColor('xterm') {
+                      // some block
+                      sh '''
+                          echo -e "\e[32mhello world\e[0m"
+                          echo hello Akram
+                          echo hello saira
+                          echo ENV_URL: ${ENV_URL}
+                      '''
+                  }
+              }
           }
+
+          stage('Two') {
+              environment {
+                 ENV_URL = "stage.google.com"
+            }
+             steps {
+                sh '''
+                    echo "stage Two"
+                    echo ENV_URL: ${ENV_URL}
+                    echo "env"
+                '''
+            }
+        }
     }
 }

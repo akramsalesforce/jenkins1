@@ -1,27 +1,27 @@
 pipeline {
-    agent any
-    options{
-      ansiColor('xterm')
-    }
-    environment {
+  agent any
+  options{
+    ansiColor('xterm')
+  }
+  environment {
         ENV_URL = "pipeline.google.com"
         SSH_CRED = credentials('SSH')
-    }
+  }
 
-   stages {
-     stage('One') {
-       steps {
+  stages {
+    stage('One') {
+      steps {
 
                       // some block
-         sh '''
-           echo "\u001B[32mHello World in Green\u001B[0m"
-           echo hello Akram
-           echo hello saira
-           echo ENV_URL: ${ENV_URL}
-           '''
-          }
-       }
-     }
+       sh '''
+         echo "\u001B[32mHello World in Green\u001B[0m"
+         echo hello Akram
+         echo hello saira
+         echo ENV_URL: ${ENV_URL}
+         '''
+      }
+    }
+
 
    stage('Two') {
      environment {
@@ -35,5 +35,6 @@ pipeline {
           '''
      }
    }
- }
+  }
 
+}

@@ -3,6 +3,9 @@ pipeline {
   options{
     ansiColor('xterm')
   }
+  triggers {
+    pollSCM('*/2 * * * *')
+   }
   environment {
         ENV_URL = "pipeline.google.com"
         SSH_CRED = credentials('SSH')

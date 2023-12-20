@@ -14,7 +14,7 @@ pipeline {
 
                       // some block
        sh '''
-         echo "\u001B[32mHello World in Green\u001B[0m"
+         echo "\u001B[31mHello World in Green\u001B[0m"
          echo hello Akram
          echo hello saira
          echo ENV_URL: ${ENV_URL}

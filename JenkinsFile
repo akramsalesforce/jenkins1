@@ -4,9 +4,9 @@ pipeline{
   stages{
     stage('One'){
       steps {
-        sh '''hello world
-              hello Akram
-              hello saria'''
+        sh '''echo hello world
+              echo hello Akram
+              echo hello saria'''
       }
      }
      stage('Two'){

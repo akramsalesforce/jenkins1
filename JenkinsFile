@@ -9,31 +9,31 @@ pipeline {
     }
 
    stages {
-          stage('One') {
-              steps {
+     stage('One') {
+       steps {
 
                       // some block
-                      sh '''
-                          echo "\u001B[32mHello World in Green\u001B[0m"
-                          echo hello Akram
-                          echo hello saira
-                          echo ENV_URL: ${ENV_URL}
-                      '''
-                  }
-              }
+         sh '''
+           echo "\u001B[32mHello World in Green\u001B[0m"
+           echo hello Akram
+           echo hello saira
+           echo ENV_URL: ${ENV_URL}
+           '''
           }
+       }
+     }
 
-          stage('Two') {
-              environment {
-                 ENV_URL = "stage.google.com"
-              }
-             steps {
-                sh '''
-                    echo "stage Two"
-                    echo ENV_URL: ${ENV_URL}
-                    env
-                '''
-             }
-          }
+   stage('Two') {
+     environment {
+       ENV_URL = "stage.google.com"
+     }
+     steps {
+       sh '''
+          echo "stage Two"
+          echo ENV_URL: ${ENV_URL}
+          env
+          '''
+       }
+     }
    }
 

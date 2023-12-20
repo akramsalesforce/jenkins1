@@ -1,9 +1,9 @@
 pipeline{
   agent any
-Environment {
+  Environment {
     ENV_URL="pipeline.google.com"
 
-}
+  }
   stages{
     stage('One'){
       steps {

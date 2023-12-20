@@ -11,7 +11,7 @@ pipeline {
                   ansiColor('xterm') {
                       // some block
                       sh '''
-                          echo -e "\e[32mhello world[0m"
+                          echo -e '\e[32mhello world[0m'
                           echo hello Akram
                           echo hello saira
                           echo ENV_URL: ${ENV_URL}

@@ -27,7 +27,7 @@ pipeline{
             sh '''
                 echo "stage Two"
                 echo ENV_URL: ${ENV_URL}
-                echo 'env'
+                echo "env"
             '''
            }
           }
